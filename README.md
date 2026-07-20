@@ -55,3 +55,24 @@ docker run -it --rm \
 ```
 
 For day-to-day development, prefer Option 2 or 3 so features, mounts, and editor customizations from `devcontainer.json` are applied.
+
+## Return to local Windows
+
+After **Reopen in Container**, Cursor runs the terminal, extensions, and tooling inside the container. Your project files stay on disk at the same path on Windows; only the environment changes.
+
+To switch back to local Windows development:
+
+1. Click the **remote indicator** in the bottom-left corner (e.g. **Dev Container: …**), then choose **Reopen Folder Locally**.
+
+   Or press `Ctrl+Shift+P` and run **Dev Containers: Reopen Folder Locally**.
+
+Cursor reloads and opens the same folder on Windows. Your code is unchanged.
+
+To stop the container entirely, run **Dev Containers: Stop Container** from the command palette, or:
+
+```bash
+docker ps
+docker stop <container-id>
+```
+
+You can reopen the container anytime with **Dev Containers: Reopen in Container**.
