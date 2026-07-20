@@ -1,0 +1,52 @@
+{
+    "name": "AI Engineering Workstation",
+
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "remoteUser": "vscode",
+
+    "workspaceFolder": "/workspace",
+
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        },
+
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12"
+        },
+
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "moby": false
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-azuretools.vscode-docker",
+                "redhat.vscode-yaml",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "ms-playwright.playwright"
+            ],
+
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.trimTrailingWhitespace": true,
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    }
+}
